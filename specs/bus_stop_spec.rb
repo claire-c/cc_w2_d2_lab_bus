@@ -13,13 +13,22 @@ def setup
   @all_passengers = [@passenger1, @passenger2, @passenger3]
   @bus_stop = BusStop.new("The Moon", @all_passengers)
   @bus = Bus.new(1000, "Mars")
-
+  p @all_passengers
 end
 
 def test_bus_stop_getter
   assert_equal("The Moon", @bus_stop.name)
   assert_equal([@passenger1, @passenger2, @passenger3], @bus_stop.queue)
 end
+
+def test_add_person_to_queue()
+
+
+  passenger4 = Person.new("Hannah", 14)
+  result = @bus_stop.add_person_to_queue(passenger4)
+  assert_equal(4, @bus_stop.queue.length())
+end
+#I am testing to see if the queue has gotten longer
 
 
 

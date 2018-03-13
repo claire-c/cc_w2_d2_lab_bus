@@ -8,6 +8,8 @@ class BusStop
     @queue = queue
   end
 
-
+  def add_person_to_queue(passenger_to_add)
+    @queue << passenger_to_add
+  end
 
 end
